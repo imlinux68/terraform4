@@ -13,6 +13,7 @@ resource "aws_vpc" "main_vpc" {
 resource "aws_subnet" "mainSN" {
   vpc_id = aws_vpc.main_vpc.id
   cidr_block = var.subnet_cidr
+  map_public_ip_on_launch = true
 
   tags = {
     "Name" = "MyMain_SN"
@@ -87,7 +88,7 @@ resource "aws_instance" "MyEC2" {
   key_name = aws_key_pair.Mykey.id
   vpc_security_group_ids = [aws_security_group.MySg.id]
   subnet_id = aws_subnet.mainSN.id
-
+  user_data = file("userdata.tpl")
   root_block_device {
     volume_size = var.vol_size
   }
