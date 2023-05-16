@@ -3,6 +3,7 @@
     yum install git -y
     
     # Install Docker
+    groupadd docker
     amazon-linux-extras install docker -y
 
     # Start Docker service
