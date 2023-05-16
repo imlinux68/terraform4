@@ -40,3 +40,10 @@ resource "aws_route" "def_route" {
     destination_cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.gw.id
 }
+
+
+resource "aws_route_table_association" "public_ip_assoc" {
+  subnet_id = aws_subnet.mainSN.id
+  route_table_id = aws_route_table.MyMainRT.id
+}
+
