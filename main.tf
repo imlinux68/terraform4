@@ -26,3 +26,11 @@ resource "aws_internet_gateway" "gw" {
     "Name" = "MyGW"
   }
 }
+
+resource "aws_route_table" "MyMainRT" {
+  vpc_id = aws_vpc.main_vpc.id
+
+  tags = {
+    "Name" = "MyDefault gateway"
+  }
+}
