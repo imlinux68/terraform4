@@ -47,3 +47,7 @@ resource "aws_route_table_association" "public_ip_assoc" {
   route_table_id = aws_route_table.MyMainRT.id
 }
 
+resource "aws_security_group" "MySg" {
+  name = "dev_sg"
+  vpc_id = aws_vpc.main_vpc.id
+}
