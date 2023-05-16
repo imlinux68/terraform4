@@ -12,7 +12,7 @@ resource "aws_vpc" "main_vpc" {
 
 resource "aws_subnet" "mainSN" {
   vpc_id = aws_vpc.main_vpc.id
-  cidr_block = "100.0.1.0/24"
+  cidr_block = var.subnet_cidr
 
   tags = {
     "Name" = "MyMain_SN"
@@ -37,7 +37,7 @@ resource "aws_route_table" "MyMainRT" {
 
 resource "aws_route" "def_route" {
     route_table_id = aws_route_table.MyMainRT.id
-    destination_cidr_block = "0.0.0.0/0"
+    destination_cidr_block = var.route_dest_block
     gateway_id = aws_internet_gateway.gw.id
 }
 
