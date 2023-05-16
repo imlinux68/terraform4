@@ -77,5 +77,18 @@ resource "aws_key_pair" "Mykey" {
 }
 
 resource "aws_instance" "name" {
-  
+  instance_type = var.ec2-type
+  ami = var.alami
+
+  tags = {
+    "Name" = "My_EC2"
+  }
+
+  key_name = aws_key_pair.Mykey.id
+  vpc_security_group_ids = [aws_security_group.MySg.id]
+  subnet_id = aws_subnet.mainSN.id
+
+  root_block_device {
+    volume_size = var.vol_size
+  }
 }

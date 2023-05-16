@@ -13,3 +13,17 @@ variable "route_dest_block" {
     default = "0.0.0.0/0"
 }
 
+variable "ec2-type" {
+    type = string
+    default = "t2.micro"
+}
+
+variable "alami" {
+    type = string
+    default = "ami-01acac09adf473073"
+}
+
+variable "vol_size" {
+    type = string
+    default = "10"
+}
