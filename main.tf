@@ -69,3 +69,13 @@ resource "aws_security_group" "MySg" {
     "Name" = "My security group"
   }
 }
+
+resource "aws_key_pair" "Mykey" {
+    key_name = "My-Key"
+    public_key = file("~/.ssh/ec2-instances.pub")
+  
+}
+
+resource "aws_instance" "name" {
+  
+}
