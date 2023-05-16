@@ -50,4 +50,18 @@ resource "aws_route_table_association" "public_ip_assoc" {
 resource "aws_security_group" "MySg" {
   name = "dev_sg"
   vpc_id = aws_vpc.main_vpc.id
+  description = "My security group"
+
+  ingress {
+    from_port = 0
+    to_port = 0
+    protocol = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+    engress {
+    from_port = 0
+    to_port = 0
+    protocol = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 }
