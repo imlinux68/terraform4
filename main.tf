@@ -92,4 +92,16 @@ resource "aws_instance" "MyEC2" {
   root_block_device {
     volume_size = var.vol_size
   }
+
+#   provisioner "local-exec" {
+#     command = templatefile("ssh-congig.tpl", {
+#         hostname = self.public_ip,
+#         user = "ec2-user"
+#         identyfile = "~/.ssh/ec2-instances"
+#     })
+#  }
+
+
 }
+
+
