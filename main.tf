@@ -58,10 +58,14 @@ resource "aws_security_group" "MySg" {
     protocol = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-    engress {
+  egress {
     from_port = 0
     to_port = 0
     protocol = "-1"
     cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    "Name" = "My security group"
   }
 }
