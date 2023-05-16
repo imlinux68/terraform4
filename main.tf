@@ -76,7 +76,7 @@ resource "aws_key_pair" "Mykey" {
   
 }
 
-resource "aws_instance" "name" {
+resource "aws_instance" "MyEC2" {
   instance_type = var.ec2-type
   ami = var.alami
 

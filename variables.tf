@@ -15,7 +15,7 @@ variable "route_dest_block" {
 
 variable "ec2-type" {
     type = string
-    default = "t2.micro"
+    default = "t3.micro"
 }
 
 variable "alami" {
